@@ -33,7 +33,7 @@ cut_chunk () {
     head -n $a "$1"
     tail -n+$b "$1"
 }
-MIDNIGHT_LINE="$(line_from_etc "window.DiscordNative.isRenderer" "$MIDNIGHT_INJECT")"
+MIDNIGHT_LINE="$(line_from_etc "window?.DiscordNative?.isRenderer" "$MIDNIGHT_INJECT")"
 
 echo "Injection starting..."
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-clear;clear
+#clear;clear
 
 SCRIPT_DIR="$(dirname -- "${BASH_SOURCE[0]}" )"
 cd "${SCRIPT_DIR}"
@@ -17,7 +17,7 @@ read
 
 killall Discord
 
-clear;clear
+#clear;clear
 
 DISCORD_PATH="$HOME/.config/discord/"
 
@@ -39,14 +39,14 @@ insert_at () {
     into="$2"
     at="$3"
     { 
-        head -n $at "$into"
+        head -n "$at" "$into"
         ((at++))
         cat "$insert"
         printf "\n"
-        tail -n +$at "$into"
+        tail -n +"$at" "$into"
     }
 }
-MIDNIGHT_LINE="$(line_from_etc "window.DiscordNative.isRenderer" "$MIDNIGHT_INJECT")"
+MIDNIGHT_LINE="$(line_from_etc "window?.DiscordNative?.isRenderer" "$MIDNIGHT_INJECT")"
 
 echo "Injection starting..."
 
